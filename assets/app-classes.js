@@ -38,7 +38,7 @@ class HackOrSnoozeApp {
 		await this.checkIfLoggedIn();
 		await this.showAllArticles();
 
-		this.generateRandomDebugContent();
+		// this.generateRandomDebugContent();
 	}
 
 	/**
