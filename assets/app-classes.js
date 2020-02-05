@@ -30,6 +30,9 @@ class HackOrSnoozeApp {
 		// Keep track of current nav item for showing appropriate data
 		this.currentContent = null;
 
+		const urlParams = new URLSearchParams(window.location.search);
+		this.devMode = urlParams.get('dev',false);
+
 		this.init();
 	}
 
@@ -38,7 +41,8 @@ class HackOrSnoozeApp {
 		await this.checkIfLoggedIn();
 		await this.showAllArticles();
 
-		// this.generateRandomDebugContent();
+		if ( this.devMode )
+			this.generateRandomDebugContent();
 	}
 
 	/**
@@ -206,7 +210,10 @@ class HackOrSnoozeApp {
 	 * Shows the submit (create article) view
 	 */
 	async showSubmit() {
-		this.generateRandomDebugContent();
+
+		if ( this.devMode )
+			this.generateRandomDebugContent();
+			
 		this.showSection(this.$submitArticleSection, 'submit');
 	}
 	/**
