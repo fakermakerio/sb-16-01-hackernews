@@ -1,0 +1,346 @@
+html {
+	font-family: Arimo, sans-serif;
+}
+body {
+	margin: 1rem;
+}
+h1 {
+	font-size: 1.1rem;
+	margin: 0;
+}
+h4 {
+	font-size: 1rem;
+	margin: 0;
+}
+h5 {
+	font-size: 0.9rem;
+	font-weight: lighter;
+}
+ul , ol {
+	margin: 0;
+	padding: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+.hidden {
+	display: none;
+}
+
+#app {
+	background-color: #f6f6ef;
+	transition: height 3s;
+}
+
+/** NAVIGATION **/
+
+#main-nav {
+	align-items: center;
+	background-color: #ff6600;
+	border-radius: 3px 3px 0 0;
+	display: flex;
+	flex-direction: row;
+	font-size: 0.85rem;
+	padding: .45rem .3rem .35rem 1.5rem;
+}
+.main-nav-list {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.main-nav-list a {
+	display: inline-block;
+	text-transform: lowercase;
+	margin: 0 .5rem 0 0;
+}
+#main-nav-logo {
+	align-self: flex-start;
+	flex-grow: 0;
+	font-weight: bold;
+}
+#main-nav-content {
+	/* background: #0f0; */
+	flex-grow: 10;
+	margin-left: .7rem;
+}
+#main-nav-content a {
+	padding-left: .5rem;
+	border-left: .1em solid #000;
+}
+#main-nav-account {
+	/* background: #f0f; */
+	justify-content: flex-end;
+	flex-grow: 1;
+	text-align: right;
+}
+
+/** NAV - AUTHENTICATED ONLY **/
+#app.authenticated #main-nav-content , 
+#app.authenticated #nav-user-profile ,
+#app.authenticated #nav-logout {
+	display: block;
+}
+#app.authenticated #nav-login {
+	display: none;
+}
+
+/** NAV - UNAUTHENTICATED ONLY **/
+#main-nav-content , 
+#nav-user-profile ,
+#nav-logout {
+	display: none;
+}
+
+/** CONTENT - AUTHENTICATED ONLY **/
+#app.authenticated #create-account-form,
+#app.authenticated #login-form {
+	display: none;
+}
+#app.authenticated #user-profile {
+	display: block;
+}
+#app.authenticated .article-actions {
+	display: flex;
+}
+/** CONTENT - UNAUTHENTICATED ONLY **/
+#user-profile {
+	display: none;
+}
+.article-actions {
+	display: none;
+}
+
+.app-section {
+	align-self: center;
+	/* display: flex; */
+	display: none;
+	flex-direction: column;
+	min-height: 15rem;
+	padding: 2rem;
+}
+
+/* USER PROFILE */
+#user-profile {
+	font-size: 0.9rem;
+}
+#user-profile > h4 {
+	margin-bottom: 1rem;
+}
+#user-profile > * {
+	margin: .5rem 0;
+}
+
+.empty-message {
+	display: none;
+	font-size: 0.9rem;
+	font-weight: lighter;
+}
+
+/** SECTION - FAVORITES **/
+#app[data-content="all-articles"] #empty-message-all {
+	display: block;
+}
+
+/** SECTION - MY STORIES **/
+#app[data-content="my-articles"] .article-actions .delete {
+	display: block;
+}
+#app[data-content="my-articles"] #articles-list {
+	list-style: none;
+	margin-left: 0;
+}
+#app[data-content="my-articles"] #empty-message-own {
+	display: block;
+}
+
+/** SECTION - FAVORITES **/
+#app[data-content="favorite-articles"] #articles-list {
+	list-style: none;
+	margin-left: 0;
+}
+#app[data-content="favorite-articles"] #empty-message-favorites {
+	display: block;
+}
+
+
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem;
+}
+
+form > * {
+	margin: .5rem 0;
+}
+
+form label {
+	font-size: 0.9rem;
+	font-weight: 700;
+	display: inline-block;
+	width: 3.5rem;
+	text-align: right;
+	margin-right: 5px;
+}
+
+form input {
+	font-size: 0.8rem;
+	border: none;
+	border-radius: 2px;
+	padding: 8px;
+	width: 300px;
+	box-shadow: 0 0 3px 1px lightgray;
+}
+
+form input:focus {
+	outline: none;
+	box-shadow: 0 0 4px 1px darkgray;
+}
+
+form > button {
+	width: 4rem;
+	margin: 5px 0px 15px 65px;
+	border: none;
+	border-radius: 4px;
+	padding: 8px;
+	font-size: 0.85rem;
+	background-color: lightslategray;
+	color: white;
+	cursor: pointer;
+	transition: all 0.15s;
+}
+
+form > button:hover {
+	background-color: dimgray;
+}
+
+form > hr {
+	margin: 0;
+	border: 0.5px solid lightgray;
+}
+
+.login-input label {
+	width: 70px;
+}
+
+.account-form button {
+	width: 4rem;
+	margin-left: 80px;
+}
+
+#create-account-form button {
+	padding: 10px;
+	width: 8rem;
+}
+
+#articles-list {
+	margin-left: 1rem;
+	padding: 0;
+	color: gray;
+	font-size: 0.8rem;
+	/* list-style: disc; */
+    /* list-style: none; */
+}
+
+#articles-list li {
+	margin-bottom: 1rem;
+}
+
+#articles-list .article-container {
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+}
+
+
+.article-actions {
+	display: none; /* Display is set in authenticated above */
+	flex-direction: row;
+	margin-right: .2rem;
+}
+.article-actions .article-action {
+	cursor: pointer;
+	/* display: none; */
+	font-size: 0.75rem;
+	margin: 0 .2rem;
+}
+.article-actions .article-action > * {
+	pointer-events: none;
+}
+.article-actions .delete {
+	display: none;
+}
+.article-actions .delete:hover {
+	color: crimson;
+}
+.article-actions .not-favorite:hover {
+	color: goldenrod;
+}
+.article-actions .favorite {
+	color: goldenrod;
+}
+.article-actions .favorite:hover {
+	color: lightgray;
+}
+
+.article-actions .pencil:hover {
+	color: darkblue;
+}
+
+
+.article-link {
+	color: black;
+	font-size: 0.85rem;
+	font-weight: normal;
+	margin: 18px 0;
+}
+
+.article-link:hover {
+	text-decoration: none;
+}
+
+.article-hostname:hover {
+	text-decoration: underline;
+}
+
+.article-author {
+	margin-left: .2rem;
+}
+
+.article-username {
+	display: block;
+	margin-top: 3px;
+}
+
+.account-forms-container {
+	padding-left: 20px;
+}
+
+#create-account-form button {
+	margin-bottom: 25px;
+}
+
+
+
+/** responsive queries for tightening things up for mobile. */
+
+@media screen and (max-width: 576px) {
+	body {
+		margin: 0;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	body {
+		max-width: 900px;
+		margin: 8px auto;
+	}
+}

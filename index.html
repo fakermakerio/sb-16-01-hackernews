@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Hack or Snooze</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/style.css" type="text/css">
+</head>
+
+<body>
+	<main id="app">
+
+		<!-- MAIN NAV -->
+		<nav id="main-nav">
+			<div id="main-nav-logo"><a href="#" class="nav-link" id="nav-all">Hack or Snooze</a></div>
+			<div id="main-nav-content" class="main-nav-list">
+				<a href="#" class="nav-link" id="nav-submit">Submit</a>
+				<a href="#" class="nav-link" id="nav-favorites">Favorites</a>
+				<a href="#" class="nav-link" id="nav-my-stories">My Stories</a>
+			</div>
+			<div id="main-nav-account" class="main-nav-list">
+				<a href="#" class="nav-link" id="nav-user-profile">[username]
+					<a href="#" class="nav-link" id="nav-login">login/create user</a>
+					<a href="#" class="nav-link" id="nav-logout">(logout)</a>
+			</div>
+		</nav>
+
+		<!-- SUBMIT -->
+		<section id="submit-article-section" class="app-section">
+			<form id="submit-form" action="" class="">
+				<div>
+					<label for="submit-author">author</label>
+					<input id="submit-author" required type="text" placeholder="author name" />
+				</div>
+				<div>
+					<label for="submit-title">title</label>
+					<input id="submit-title" required type="text" placeholder="article title" />
+				</div>
+				<div>
+					<label for="submit-url">url</label>
+					<input id="submit-url" required type="url" placeholder="article url" />
+				</div>
+				<button type="submit">submit</button>
+			</form>
+		</section>
+
+		<!-- EDIT ARTICLE -->
+		<section id="edit-article-section" class="app-section">
+			<form action="#" id="edit-article-form" class="" method="post">
+				<h4>Article Information</h4>
+				<div class="edit-input">
+					<label for="edit-title">Title</label>
+					<input id="edit-title" type="text">
+					<button type="submit">change</button>
+				</div>
+			</form>
+		</section>
+
+		<!-- ARTICLES -->
+		<section id="articles-section" class="app-section">
+			<ol id="articles-list">
+			</ol>
+			<div id="empty-message-container">
+				<p class="empty-message" id="empty-message-all">There aren't stories! Why don&apos;t you add one?</p>
+				<p class="empty-message" id="empty-message-favorites">You don&apos;t have any favorite stories. Why don&apos;t you add one?</p>
+				<p class="empty-message" id="empty-message-own">You don&apos;t have any stories. Why don&apos;t you add one?</p>
+			</div>
+		</section>
+
+		<!-- ACCOUNT -->
+		<section id="account-section" class="app-section">
+			<form action="#" id="login-form" class="account-form" method="post">
+				<h4>Login</h4>
+				<div class="login-input">
+					<label for="login-username">username</label>
+					<input id="login-username" type="text">
+				</div>
+				<div class="login-input">
+					<label for="login-password">password</label>
+					<input id="login-password" type="password">
+				</div>
+				<button type="submit">login</button>
+				<hr>
+			</form>
+			<form action="#" id="create-account-form" class="account-form" method="post">
+				<h4>Create Account</h4>
+				<div class="login-input">
+					<label for="create-account-name">name</label>
+					<input id="create-account-name" type="text">
+				</div>
+				<div class="login-input">
+					<label for="create-account-username">username</label>
+					<input id="create-account-username" type="text">
+				</div>
+				<div class="login-input">
+					<label for="create-account-password">password</label>
+					<input id="create-account-password" type="password">
+				</div>
+				<button type="submit">create account</button>
+			</form>
+			<div id="user-profile">
+				<h4>User Profile Info</h4>
+				<div id="profile-name">Name:</div>
+				<div id="profile-username">Username:</div>
+				<div id="profile-account-date">Account Created:</div>
+			</div>
+		</section>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.js"></script>
+		<script src="assets/api-classes.js"></script>
+		<script src="assets/app-classes.js"></script>
+		<!-- DEBUG/DEVELOPMENT -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"></script>
+
+		<script>
+		$(function(){
+			const app = new HackOrSnoozeApp();
+		});
+		</script>
+
+</body>
+</main>
+</body>
+
+
+</html>
